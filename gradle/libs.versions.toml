@@ -25,18 +25,20 @@ kotlinxBrowser = "0.3"
 androidxCore = "1.15.0"
 androidxCoreSplash = "1.0.1"
 androidxAppCompat = "1.7.0"
-androidxActivity = "1.10.0"
+androidxActivity = "1.10.1"
 androidxFragment = "1.8.6"
 androidxAnnotation = "1.9.1"
 androidxStartup = "1.2.0"
 androidxBrowser = "1.8.0"
+androidxDataStore = "1.1.3"
 
 # KMP
 kmpCompose = "1.7.3"
 kmpComplete = "1.1.0"
 kmpSwiftKlib = "0.6.3"
-kmpLifecycle = "2.9.0-alpha02"
+kmpLifecycle = "2.9.0-alpha03"
 kmpNavigation = "2.8.0-alpha12"
+kmpPaging = "3.3.0-alpha02-0.5.1"
 
 # Google
 ksp = "2.1.10-1.0.29"
@@ -50,6 +52,7 @@ ksoup = "0.1.2"
 coil3 = "3.1.0"
 detekt = "1.23.7"
 ktorfit = "2.2.0"
+openai = "4.0.1"
 libraries = "11.4.0"
 buildKonfig = "0.16.0"
 twitterComposeRule = "0.0.26"
@@ -111,14 +114,22 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "androidxFragment" }
 androidx-startup = { module = "androidx.startup:startup-runtime", version.ref = "androidxStartup" }
 androidx-browser = { module = "androidx.browser:browser", version.ref = "androidxBrowser" }
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "androidxDataStore" }
+androidx-datastore-proto = { module = "androidx.datastore:datastore-core", version.ref = "androidxDataStore" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences-core", version.ref = "androidxDataStore" }
 
 # KMP
 kmp-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "kmpLifecycle" }
 kmp-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "kmpLifecycle" }
 kmp-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "kmpNavigation" }
+kmp-paging-common = { module = "app.cash.paging:paging-common", version.ref = "kmpPaging" }
+kmp-paging-compose = { module = "app.cash.paging:paging-compose-common", version.ref = "kmpPaging" }
 
 # Ktorfit
 ktorfit = { module = "de.jensklingenberg.ktorfit:ktorfit-lib", version.ref = "ktorfit" }
+
+# OpenAI
+openai-client = { module = "com.aallam.openai:openai-client", version.ref = "openai" }
 
 # Koin
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
@@ -177,14 +188,14 @@ ui-android = [
     "androidx-browser",
 ]
 
-ktor-client = [
+ktor = [
     "ktor-core",
     "ktor-content-negotiation",
     "ktor-serialization-json",
     "ktot-logging",
 ]
 
-koin-client = [
+koin = [
     "koin-core",
     "koin-compose",
     "koin-compose-viewmodel",
