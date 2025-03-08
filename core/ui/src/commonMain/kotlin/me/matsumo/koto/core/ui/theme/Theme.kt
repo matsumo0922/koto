@@ -83,7 +83,7 @@ val LocalColorScheme = staticCompositionLocalOf { LightDefaultColorScheme }
 fun KotoTheme(
     themeConfig: ThemeConfig = ThemeConfig.System,
     themeColorConfig: ThemeColorConfig = ThemeColorConfig.Blue,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val shouldUseDarkTheme = shouldUseDarkTheme(themeConfig)
     val colorScheme = getColorTheme(themeColorConfig, shouldUseDarkTheme)
@@ -94,7 +94,7 @@ fun KotoTheme(
         MaterialTheme(
             colorScheme = colorScheme,
             typography = KotoTypography,
-            content = content
+            content = content,
         )
     }
 }

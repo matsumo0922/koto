@@ -1,13 +1,10 @@
 import org.gradle.declarative.dsl.schema.FqName.Empty.packageName
-import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
-import java.util.Properties
 
 plugins {
     id("matsumo.primitive.kmp.common")
-    id("matsumo.primitive.kmp.compose")
     id("matsumo.primitive.kmp.android.application")
+    id("matsumo.primitive.kmp.compose")
     id("matsumo.primitive.kmp.android")
     id("matsumo.primitive.kmp.ios")
     id("matsumo.primitive.kmp.jvm")
@@ -44,7 +41,7 @@ kotlin {
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "KotoAppKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
@@ -69,6 +66,5 @@ buildkonfig {
     packageName = "me.matsumo.koto"
 
     defaultConfigs {
-
     }
 }

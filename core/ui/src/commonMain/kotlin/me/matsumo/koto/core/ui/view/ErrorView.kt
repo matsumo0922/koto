@@ -20,12 +20,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import me.matsumo.fanbox.core.ui.theme.bold
-import me.matsumo.fanbox.core.ui.theme.center
 import me.matsumo.koto.core.domain.ScreenState
 import me.matsumo.koto.core.resources.Res
 import me.matsumo.koto.core.resources.common_reload
 import me.matsumo.koto.core.resources.error_executed
+import me.matsumo.koto.core.ui.theme.bold
+import me.matsumo.koto.core.ui.theme.center
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
