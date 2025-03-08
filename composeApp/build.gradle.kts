@@ -22,22 +22,18 @@ android {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
-        }
+            implementation(project(":core:common"))
+            implementation(project(":core:domain"))
+            implementation(project(":core:datasource"))
+            implementation(project(":core:repository"))
+            implementation(project(":core:ui"))
+            implementation(project(":core:resources"))
 
-        commonTest.dependencies {
-            implementation(kotlin("test"))
-            @OptIn(ExperimentalComposeLibrary::class)
-            implementation(compose.uiTest)
+            implementation(project(":feature:home"))
         }
 
         androidMain.dependencies {
-            implementation(compose.uiTooling)
-            implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.core.splashscreen)
         }
 
         jvmMain.dependencies {

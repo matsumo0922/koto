@@ -14,7 +14,7 @@ android {
 
 compose.resources {
     publicResClass = true
-    packageOfResClass = "me.matsumo.fanbox.core.resources"
+    packageOfResClass = "me.matsumo.koto.core.resources"
     generateResClass = always
 }
 
