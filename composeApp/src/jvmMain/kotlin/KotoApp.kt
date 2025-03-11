@@ -1,10 +1,12 @@
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.application
 import me.matsumo.koto.KotoApp
-import me.matsumo.koto.core.ui.theme.DarkDefaultColorScheme
-import me.matsumo.koto.core.ui.theme.LightDefaultColorScheme
+import me.matsumo.koto.KotoAppStateHolder
+import me.matsumo.koto.core.domain.UserData
+import me.matsumo.koto.core.ui.theme.shouldUseDarkTheme
 import me.matsumo.koto.di.initKoin
 import me.matsumo.koto.ui.KotoTitleBar
 import org.jetbrains.jewel.foundation.theme.JewelTheme
@@ -15,22 +17,22 @@ import org.jetbrains.jewel.intui.standalone.theme.default
 import org.jetbrains.jewel.intui.standalone.theme.lightThemeDefinition
 import org.jetbrains.jewel.intui.window.decoratedWindow
 import org.jetbrains.jewel.intui.window.styling.dark
-import org.jetbrains.jewel.intui.window.styling.light
 import org.jetbrains.jewel.intui.window.styling.lightWithLightHeader
 import org.jetbrains.jewel.ui.ComponentStyling
-import org.jetbrains.jewel.ui.theme.colorPalette
 import org.jetbrains.jewel.window.DecoratedWindow
-import org.jetbrains.jewel.window.styling.TitleBarColors
-import org.jetbrains.jewel.window.styling.TitleBarIcons
 import org.jetbrains.jewel.window.styling.TitleBarStyle
+import org.koin.compose.koinInject
 
 fun main() {
     initKoin()
     application {
+        val appState = koinInject<KotoAppStateHolder>()
+        val userData by appState.userData.collectAsState(UserData.default())
+
         val theme: ThemeDefinition
         val titleBarStyle: TitleBarStyle
 
-        if (isSystemInDarkTheme()) {
+        if (shouldUseDarkTheme(userData.themeConfig)) {
             theme = JewelTheme.darkThemeDefinition()
             titleBarStyle = TitleBarStyle.dark()
         } else {
@@ -49,9 +51,15 @@ fun main() {
             ) {
                 KotoTitleBar(
                     modifier = Modifier.fillMaxWidth(),
+                    onForwardClicked = appState::translationForward,
+                    onBackwardClicked = appState::translationBackward,
+                    onHistoryClicked = { appState.setDialogState(KotoAppStateHolder.DialogState.History) },
+                    onSettingClicked = { appState.setDialogState(KotoAppStateHolder.DialogState.Setting) },
                 )
 
-                KotoApp()
+                KotoApp(
+                    appState = appState,
+                )
             }
         }
     }

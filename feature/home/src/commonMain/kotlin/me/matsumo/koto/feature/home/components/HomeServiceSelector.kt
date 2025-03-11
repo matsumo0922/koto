@@ -21,6 +21,8 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 internal fun HomeServiceSelector(
+    selectedTranslationService: TranslationService,
+    onTranslationServiceChanged: (TranslationService) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -31,8 +33,8 @@ internal fun HomeServiceSelector(
         TranslationService.entries.forEach {
             ServiceItem(
                 translationService = it,
-                selected = it == TranslationService.ChatGPT,
-                onClick = { },
+                selected = it == selectedTranslationService,
+                onClick = onTranslationServiceChanged,
             )
         }
     }

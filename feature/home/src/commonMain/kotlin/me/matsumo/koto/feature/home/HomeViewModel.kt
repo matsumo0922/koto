@@ -6,6 +6,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import me.matsumo.koto.core.domain.Language
+import me.matsumo.koto.core.domain.TranslationService
 import me.matsumo.koto.core.domain.UserData
 import me.matsumo.koto.core.repository.UserDataRepository
 import kotlin.uuid.ExperimentalUuidApi
@@ -28,6 +30,24 @@ class HomeViewModel(
 
                 _uiState.value = _uiState.value.copy(userData = it)
             }
+        }
+    }
+
+    fun selectSourceLanguage(language: Language) {
+        viewModelScope.launch {
+            // userDataRepository.setSourceLanguage(language)
+        }
+    }
+
+    fun selectTargetLanguage(language: Language) {
+        viewModelScope.launch {
+            userDataRepository.setTargetLanguage(language)
+        }
+    }
+
+    fun selectTranslationService(translationService: TranslationService) {
+        viewModelScope.launch {
+            userDataRepository.setSelectedTranslationService(translationService)
         }
     }
 }

@@ -31,6 +31,7 @@ fun HomeScreen(
     ) {
         HomeLanguageSelector(
             modifier = Modifier.wrapContentWidth(),
+            targetLanguage = uiState.userData.targetLanguage,
         )
 
         HomeEditor(
@@ -40,7 +41,9 @@ fun HomeScreen(
         )
 
         HomeServiceSelector(
-            modifier = Modifier.wrapContentWidth()
+            modifier = Modifier.wrapContentWidth(),
+            selectedTranslationService = uiState.userData.selectedTranslationService,
+            onTranslationServiceChanged = viewModel::selectTranslationService,
         )
     }
 }

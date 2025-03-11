@@ -2,8 +2,10 @@ package me.matsumo.koto.core.datasource
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
+import me.matsumo.koto.core.domain.Language
 import me.matsumo.koto.core.domain.ThemeColorConfig
 import me.matsumo.koto.core.domain.ThemeConfig
+import me.matsumo.koto.core.domain.TranslationService
 
 class UserDataStore(
     private val ioDispatcher: CoroutineDispatcher,
@@ -30,6 +32,18 @@ class UserDataStore(
     suspend fun setThemeColorConfig(themeColorConfig: ThemeColorConfig) = withContext(ioDispatcher) {
         userPreference.updateData {
             it.copy(themeColorConfig = themeColorConfig)
+        }
+    }
+
+    suspend fun setTargetLanguage(language: Language) = withContext(ioDispatcher) {
+        userPreference.updateData {
+            it.copy(targetLanguage = language)
+        }
+    }
+
+    suspend fun setSelectedTranslationService(translationService: TranslationService) = withContext(ioDispatcher) {
+        userPreference.updateData {
+            it.copy(selectedTranslationService = translationService)
         }
     }
 

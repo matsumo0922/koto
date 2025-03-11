@@ -23,6 +23,7 @@ kotlin {
             implementation(project(":core:resources"))
 
             implementation(project(":feature:home"))
+            implementation(project(":feature:setting"))
         }
     }
 }

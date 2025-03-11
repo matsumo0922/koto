@@ -25,6 +25,7 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 internal fun HomeLanguageSelector(
+    targetLanguage: Language,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -52,7 +53,7 @@ internal fun HomeLanguageSelector(
 
         LanguageSelector(
             modifier = Modifier.widthIn(min = 192.dp),
-            language = Language.JAPANESE,
+            language = targetLanguage,
         )
     }
 }

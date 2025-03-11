@@ -108,7 +108,7 @@ fun KotoTheme(
 }
 
 @Composable
-private fun shouldUseDarkTheme(themeConfig: ThemeConfig): Boolean {
+fun shouldUseDarkTheme(themeConfig: ThemeConfig): Boolean {
     return when (themeConfig) {
         ThemeConfig.System -> isSystemInDarkTheme()
         ThemeConfig.Light -> false
@@ -116,7 +116,7 @@ private fun shouldUseDarkTheme(themeConfig: ThemeConfig): Boolean {
     }
 }
 
-private fun getColorTheme(themeColorConfig: ThemeColorConfig, shouldUseDarkTheme: Boolean) = when (themeColorConfig) {
+fun getColorTheme(themeColorConfig: ThemeColorConfig, shouldUseDarkTheme: Boolean) = when (themeColorConfig) {
     ThemeColorConfig.Blue -> if (shouldUseDarkTheme) DarkBlueColorScheme else LightBlueColorScheme
     ThemeColorConfig.Brown -> if (shouldUseDarkTheme) DarkBrownColorScheme else LightBrownColorScheme
     ThemeColorConfig.Green -> if (shouldUseDarkTheme) DarkGreenColorScheme else LightGreenColorScheme

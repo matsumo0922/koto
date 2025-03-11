@@ -25,6 +25,10 @@ import org.jetbrains.jewel.window.TitleBar
 
 @Composable
 internal fun DecoratedWindowScope.KotoTitleBar(
+    onForwardClicked: () -> Unit,
+    onBackwardClicked: () -> Unit,
+    onHistoryClicked: () -> Unit,
+    onSettingClicked: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     TitleBar(
@@ -34,12 +38,16 @@ internal fun DecoratedWindowScope.KotoTitleBar(
                 modifier = Modifier
                     .padding(horizontal = 8.dp)
                     .align(Alignment.Start),
+                onForwardClicked = onForwardClicked,
+                onBackwardClicked = onBackwardClicked,
             )
 
             SettingControl(
                 modifier = Modifier
                     .padding(horizontal = 8.dp)
                     .align(Alignment.End),
+                onHistoryClicked = onHistoryClicked,
+                onSettingClicked = onSettingClicked,
             )
         }
     )
@@ -49,6 +57,8 @@ internal fun DecoratedWindowScope.KotoTitleBar(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun NavigationControl(
+    onForwardClicked: () -> Unit,
+    onBackwardClicked: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     FlowRow(
@@ -58,19 +68,19 @@ private fun NavigationControl(
     ) {
         IconButton(
             modifier = Modifier.size(24.dp),
-            onClick = { }
+            onClick = onBackwardClicked,
         ) {
             Icon(
                 modifier = Modifier.padding(4.dp),
                 imageVector = Icons.AutoMirrored.Filled.ArrowBackIos,
                 tint = tintColor,
-                contentDescription = "Back",
+                contentDescription = "Backward",
             )
         }
 
         IconButton(
             modifier = Modifier.size(24.dp),
-            onClick = { }
+            onClick = onForwardClicked,
         ) {
             Icon(
                 modifier = Modifier.padding(4.dp),
@@ -85,6 +95,8 @@ private fun NavigationControl(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun SettingControl(
+    onHistoryClicked: () -> Unit,
+    onSettingClicked: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     FlowRow(
@@ -93,7 +105,7 @@ private fun SettingControl(
     ) {
         IconButton(
             modifier = Modifier.size(24.dp),
-            onClick = { }
+            onClick = onHistoryClicked,
         ) {
             Icon(
                 modifier = Modifier.padding(2.dp),
@@ -105,7 +117,7 @@ private fun SettingControl(
 
         IconButton(
             modifier = Modifier.size(24.dp),
-            onClick = { }
+            onClick = onSettingClicked,
         ) {
             Icon(
                 modifier = Modifier.padding(2.dp),
