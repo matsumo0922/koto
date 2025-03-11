@@ -31,6 +31,11 @@ compose.desktop {
     application {
         mainClass = "KotoAppKt"
 
+        buildTypes.release.proguard{
+            version.set("7.6.1")
+            isEnabled = false
+        }
+
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "koto"
@@ -41,10 +46,11 @@ compose.desktop {
             }
             windows {
                 iconFile.set(project.file("desktopAppIcons/WindowsIcon.ico"))
+                perUserInstall = true
             }
             macOS {
                 iconFile.set(project.file("desktopAppIcons/MacosIcon.icns"))
-                bundleID = "me.matsumo.koto.desktopApp"
+                bundleID = "me.matsumo.koto"
             }
         }
     }

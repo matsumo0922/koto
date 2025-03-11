@@ -15,6 +15,7 @@ kotlin {
             implementation(project(":core:resources"))
 
             api(libs.bundles.ui.common)
+            api(libs.bundles.coil)
             api(libs.bundles.cupertino)
             api(libs.bundles.jewel)
 

@@ -106,6 +106,7 @@ fun TextStyle.center() = this.merge(TextStyle(textAlign = TextAlign.Center))
 fun TextStyle.end() = this.merge(TextStyle(textAlign = TextAlign.End))
 
 // Style
+fun TextStyle.normal() = this.merge(TextStyle(fontWeight = FontWeight.Normal))
 fun TextStyle.bold() = this.merge(TextStyle(fontWeight = FontWeight.Bold))
 fun TextStyle.extraBold() = this.merge(TextStyle(fontWeight = FontWeight.ExtraBold))
 fun TextStyle.italic() = this.merge(TextStyle(fontStyle = FontStyle.Italic))

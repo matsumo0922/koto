@@ -49,4 +49,25 @@
     <string name="unit_year">年</string>
     <string name="unit_month">月</string>
     <string name="unit_day">日</string>
+
+    <!-- Languages -->
+    <string name="language_auto">自動検出</string>
+    <string name="language_ja">日本語</string>
+    <string name="language_en">英語</string>
+    <string name="language_es">スペイン語</string>
+    <string name="language_fr">フランス語</string>
+    <string name="language_de">ドイツ語</string>
+    <string name="language_zh">中国語(簡体)</string>
+    <string name="language_ko">韓国語</string>
+    <string name="language_it">イタリア語</string>
+    <string name="language_ru">ロシア語</string>
+    <string name="language_ar">アラビア語</string>
+
+    <!-- Translation Service -->
+    <string name="translation_service_google">Google 翻訳</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_chatgpt">ChatGPT</string>
+
+    <!-- Home -->
+    <string name="home_editor_placeholder">翻訳するテキストを入力</string>
 </resources>
