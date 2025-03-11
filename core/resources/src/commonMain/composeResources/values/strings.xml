@@ -73,4 +73,14 @@
 
     <!-- Setting -->
     <string name="setting_title">設定</string>
+    <string name="setting_general">一般</string>
+    <string name="setting_general_retranslation">再翻訳を表示</string>
+    <string name="setting_general_startup">システム起動時にアプリを起動</string>
+    <string name="setting_general_language">言語</string>
+    <string name="setting_api_title">API 設定</string>
+    <string name="setting_api_key_placeholder">API Key を入力</string>
+    <string name="setting_other_title">その他</string>
+    <string name="setting_other_open_source_license">オープンソースライセンス</string>
+    <string name="setting_other_privacy_policy">プライバシーポリシー</string>
+    <string name="setting_other_terms_of_service">利用規約</string>
 </resources>

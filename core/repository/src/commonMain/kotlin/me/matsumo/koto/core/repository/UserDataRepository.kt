@@ -42,4 +42,12 @@ class UserDataRepository(
     suspend fun setChatGptApiKey(apiKey: String) {
         userDataStore.setChatGptApiKey(apiKey)
     }
+
+    suspend fun setStartup(isStartup: Boolean) {
+        userDataStore.setStartup(isStartup)
+    }
+
+    suspend fun setShowRetranslation(isShowRetranslation: Boolean) {
+        userDataStore.setShowRetranslation(isShowRetranslation)
+    }
 }

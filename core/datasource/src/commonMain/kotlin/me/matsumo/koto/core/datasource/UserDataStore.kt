@@ -64,4 +64,16 @@ class UserDataStore(
             it.copy(chatGptApiKey = apiKey)
         }
     }
+
+    suspend fun setStartup(isStartup: Boolean) = withContext(ioDispatcher) {
+        userPreference.updateData {
+            it.copy(isStartup = isStartup)
+        }
+    }
+
+    suspend fun setShowRetranslation(isShowRetranslation: Boolean) = withContext(ioDispatcher) {
+        userPreference.updateData {
+            it.copy(isShowRetranslation = isShowRetranslation)
+        }
+    }
 }

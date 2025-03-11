@@ -5,6 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import me.matsumo.koto.KotoAppStateHolder
 import me.matsumo.koto.core.datasource.di.dataSourceModule
 import me.matsumo.koto.core.repository.di.repositoryModule
+import me.matsumo.koto.core.setting.di.settingModule
 import me.matsumo.koto.feature.home.di.homeModule
 import org.koin.core.context.startKoin
 import org.koin.core.module.dsl.singleOf
@@ -18,6 +19,7 @@ fun initKoin() {
         modules(repositoryModule)
 
         modules(homeModule)
+        modules(settingModule)
     }
 }
 

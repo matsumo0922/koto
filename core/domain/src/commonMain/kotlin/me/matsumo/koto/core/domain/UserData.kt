@@ -12,6 +12,8 @@ data class UserData(
     val googleTranslateApiKey: String,
     val deeplApiKey: String,
     val chatGptApiKey: String,
+    val isStartup: Boolean,
+    val isShowRetranslation: Boolean,
 ) {
     companion object {
         fun default(): UserData {
@@ -24,6 +26,8 @@ data class UserData(
                 googleTranslateApiKey = "",
                 deeplApiKey = "",
                 chatGptApiKey = "",
+                isStartup = false,
+                isShowRetranslation = true,
             )
         }
     }

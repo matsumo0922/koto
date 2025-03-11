@@ -53,6 +53,10 @@ compose.desktop {
                 iconFile.set(project.file("desktopAppIcons/MacosIcon.icns"))
                 bundleID = "me.matsumo.koto"
             }
+
+            jvmArgs(
+                "-Dapple.awt.application.appearance=system"
+            )
         }
     }
 }
