@@ -12,5 +12,9 @@ kotlin {
             api(libs.bundles.infra)
             api(libs.bundles.koin)
         }
+
+        jvmMain.dependencies {
+            api(libs.kotlinx.coroutines.swing)
+        }
     }
 }

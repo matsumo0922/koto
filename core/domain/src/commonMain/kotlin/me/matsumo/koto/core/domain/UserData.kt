@@ -7,23 +7,19 @@ data class UserData(
     val kotoId: String,
     val themeConfig: ThemeConfig,
     val themeColorConfig: ThemeColorConfig,
-    val isAgreedPrivacyPolicy: Boolean,
-    val isAgreedTermsOfService: Boolean,
-    val isDeveloperMode: Boolean,
-    val isPlusMode: Boolean,
+    val googleTranslateApiKey: String,
+    val deeplApiKey: String,
+    val chatGptApiKey: String,
 ) {
-    val hasPrivilege get() = isPlusMode || isDeveloperMode
-
     companion object {
         fun default(): UserData {
             return UserData(
                 kotoId = "",
                 themeConfig = ThemeConfig.System,
                 themeColorConfig = ThemeColorConfig.Blue,
-                isAgreedPrivacyPolicy = false,
-                isAgreedTermsOfService = false,
-                isDeveloperMode = false,
-                isPlusMode = false,
+                googleTranslateApiKey = "",
+                deeplApiKey = "",
+                chatGptApiKey = "",
             )
         }
     }

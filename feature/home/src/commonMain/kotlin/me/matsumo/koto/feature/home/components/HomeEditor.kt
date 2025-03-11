@@ -22,6 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.serialization.Serializable
 import me.matsumo.koto.core.resources.Res
 import me.matsumo.koto.core.resources.home_editor_placeholder
 import org.jetbrains.compose.resources.stringResource
@@ -109,6 +110,7 @@ private fun PreviewItem(
             text = translatedText,
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurface,
+            fontSize = 24.sp,
         )
 
         if (reTranslatedText.isNotEmpty()) {
