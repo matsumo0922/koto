@@ -28,7 +28,7 @@ internal fun HomeServiceSelector(
     Row(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         TranslationService.entries.forEach {
             ServiceItem(

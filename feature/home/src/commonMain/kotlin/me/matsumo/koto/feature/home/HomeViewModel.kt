@@ -16,7 +16,7 @@ import kotlin.uuid.Uuid
 @OptIn(ExperimentalUuidApi::class)
 class HomeViewModel(
     private val userDataRepository: UserDataRepository,
-): ViewModel() {
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState(userData = UserData.default()))
     val uiState = _uiState.asStateFlow()
@@ -30,12 +30,6 @@ class HomeViewModel(
 
                 _uiState.value = _uiState.value.copy(userData = it)
             }
-        }
-    }
-
-    fun selectSourceLanguage(language: Language) {
-        viewModelScope.launch {
-            // userDataRepository.setSourceLanguage(language)
         }
     }
 

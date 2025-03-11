@@ -13,11 +13,11 @@ class KotoAppStateHolder(
     val userData = userDataRepository.userData
 
     fun translationForward() {
-
+        // TODO: Implement
     }
 
     fun translationBackward() {
-
+        // TODO: Implement
     }
 
     fun setDialogState(dialogState: DialogState) {

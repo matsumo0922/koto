@@ -1,6 +1,5 @@
 package me.matsumo.koto.feature.home.components
 
-import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,7 +21,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.serialization.Serializable
 import me.matsumo.koto.core.resources.Res
 import me.matsumo.koto.core.resources.home_editor_placeholder
 import org.jetbrains.compose.resources.stringResource
@@ -35,7 +33,7 @@ internal fun HomeEditor(
 
     Row(
         modifier = modifier,
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         EditorItem(
             modifier = Modifier.weight(1f),
@@ -60,7 +58,7 @@ private fun EditorItem(
             .clip(RoundedCornerShape(8.dp))
             .background(MaterialTheme.colorScheme.surfaceColorAtElevation(2.dp))
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         BasicTextField(
             modifier = Modifier
@@ -70,7 +68,7 @@ private fun EditorItem(
             cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
             textStyle = MaterialTheme.typography.bodyLarge.copy(
                 color = MaterialTheme.colorScheme.onSurface,
-                fontSize = 24.sp
+                fontSize = 24.sp,
             ),
             decorator = { innerTextField ->
                 Box {
@@ -85,7 +83,7 @@ private fun EditorItem(
 
                     innerTextField()
                 }
-            }
+            },
         )
     }
 }
@@ -101,7 +99,7 @@ private fun PreviewItem(
             .clip(RoundedCornerShape(8.dp))
             .background(MaterialTheme.colorScheme.surfaceColorAtElevation(2.dp))
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
             modifier = Modifier

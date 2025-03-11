@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import me.matsumo.koto.core.resources.Res
-import me.matsumo.koto.core.resources.setting_api_title
 import me.matsumo.koto.core.resources.setting_general
 import me.matsumo.koto.core.resources.setting_general_language
 import me.matsumo.koto.core.resources.setting_general_retranslation
@@ -32,7 +31,7 @@ internal fun SettingGeneralSection(
         SettingTextItem(
             modifier = Modifier.fillMaxWidth(),
             title = stringResource(Res.string.setting_general_language),
-            description = "日本語"
+            description = "日本語",
         )
 
         SettingSwitchItem(

@@ -13,18 +13,18 @@ import me.matsumo.koto.core.repository.UserDataRepository
 
 class SettingViewModel(
     private val userDataRepository: UserDataRepository,
-): ViewModel() {
+) : ViewModel() {
 
     val screenState = userDataRepository.userData.map {
         ScreenState.Idle(
             SettingUiState(
-                userData = it
-            )
+                userData = it,
+            ),
         )
     }.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(),
-        initialValue = ScreenState.Loading
+        initialValue = ScreenState.Loading,
     )
 
     fun setStartup(isStartup: Boolean) {
@@ -60,5 +60,5 @@ class SettingViewModel(
 
 @Stable
 data class SettingUiState(
-    val userData: UserData
+    val userData: UserData,
 )

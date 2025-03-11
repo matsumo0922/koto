@@ -82,6 +82,7 @@ val DarkDefaultColorScheme = darkColorScheme(
 
 val LocalColorScheme = staticCompositionLocalOf { LightDefaultColorScheme }
 
+@Suppress("ModifierMissing")
 @Composable
 fun KotoTheme(
     themeConfig: ThemeConfig = ThemeConfig.System,

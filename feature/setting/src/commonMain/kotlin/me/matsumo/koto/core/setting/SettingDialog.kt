@@ -26,6 +26,7 @@ import org.jetbrains.jewel.window.DecoratedWindow
 import org.jetbrains.jewel.window.TitleBar
 import org.koin.compose.viewmodel.koinViewModel
 
+@Suppress("ModifierMissing")
 @Composable
 fun SettingDialog(
     onCloseRequest: () -> Unit,
@@ -53,10 +54,10 @@ fun SettingDialog(
             modifier = Modifier.fillMaxSize(),
             screenState = screenState,
             containerColor = MaterialTheme.colorScheme.background,
-            terminate = onCloseRequest
+            terminate = onCloseRequest,
         ) {
             LazyColumn(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize(),
             ) {
                 item {
                     SettingGeneralSection(

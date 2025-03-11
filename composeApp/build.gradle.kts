@@ -32,7 +32,7 @@ compose.desktop {
     application {
         mainClass = "KotoAppKt"
 
-        buildTypes.release.proguard{
+        buildTypes.release.proguard {
             version.set("7.6.1")
             isEnabled = false
         }
@@ -55,7 +55,7 @@ compose.desktop {
             }
 
             jvmArgs(
-                "-Dapple.awt.application.appearance=system"
+                "-Dapple.awt.application.appearance=system",
             )
         }
     }

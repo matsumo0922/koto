@@ -49,10 +49,9 @@ internal fun DecoratedWindowScope.KotoTitleBar(
                 onHistoryClicked = onHistoryClicked,
                 onSettingClicked = onSettingClicked,
             )
-        }
+        },
     )
 }
-
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

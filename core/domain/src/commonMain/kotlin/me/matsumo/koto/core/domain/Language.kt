@@ -17,7 +17,7 @@ import org.jetbrains.compose.resources.StringResource
 
 enum class Language(
     val locale: Locale,
-    val displayName: StringResource
+    val displayName: StringResource,
 ) {
     AUTO(
         locale = Locale.current,

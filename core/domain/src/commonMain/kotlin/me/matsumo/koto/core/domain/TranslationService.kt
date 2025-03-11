@@ -12,14 +12,14 @@ enum class TranslationService(
 ) {
     Google(
         iconUrl = "https://cdn.worldvectorlogo.com/logos/google-translate-logo.svg",
-        displayName = Res.string.translation_service_google
+        displayName = Res.string.translation_service_google,
     ),
     DeepL(
         iconUrl = "https://cdn.worldvectorlogo.com/logos/deepl-1.svg",
-        displayName = Res.string.translation_service_deepl
+        displayName = Res.string.translation_service_deepl,
     ),
     ChatGPT(
         iconUrl = "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
-        displayName = Res.string.translation_service_chatgpt
+        displayName = Res.string.translation_service_chatgpt,
     ),
 }

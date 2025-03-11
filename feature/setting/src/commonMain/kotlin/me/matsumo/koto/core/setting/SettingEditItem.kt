@@ -29,7 +29,6 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.intl.LocaleList
 import androidx.compose.ui.unit.dp
@@ -122,7 +121,7 @@ fun SettingEditItem(
             cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
             keyboardOptions = KeyboardOptions(
                 imeAction = ImeAction.Done,
-                hintLocales = LocaleList(Locale("en"))
+                hintLocales = LocaleList(Locale("en")),
             ),
             maxLines = maxLines,
             decorationBox = { innerTextField ->
@@ -135,7 +134,7 @@ fun SettingEditItem(
                 }
 
                 innerTextField()
-            }
+            },
         )
     }
 }
