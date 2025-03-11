@@ -17,10 +17,6 @@ class KmpComposePlugin : Plugin<Project> {
                 apply("org.jetbrains.compose")
                 apply("org.jetbrains.kotlin.plugin.compose")
             }
-
-            android {
-                buildFeatures.compose = true
-            }
         }
     }
 }

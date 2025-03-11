@@ -3,17 +3,13 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     id("matsumo.primitive.kmp.common")
-    id("matsumo.primitive.kmp.android.application")
+    // id("matsumo.primitive.kmp.android.application")
     id("matsumo.primitive.kmp.compose")
-    id("matsumo.primitive.kmp.android")
-    id("matsumo.primitive.kmp.ios")
+    // id("matsumo.primitive.kmp.android")
+    // id("matsumo.primitive.kmp.ios")
     id("matsumo.primitive.kmp.jvm")
     id("matsumo.primitive.ktorfit")
     id("matsumo.primitive.detekt")
-}
-
-android {
-    namespace = "me.matsumo.koto"
 }
 
 kotlin {
@@ -27,14 +23,6 @@ kotlin {
             implementation(project(":core:resources"))
 
             implementation(project(":feature:home"))
-        }
-
-        androidMain.dependencies {
-            implementation(libs.androidx.core.splashscreen)
-        }
-
-        jvmMain.dependencies {
-            implementation(compose.desktop.currentOs)
         }
     }
 }
@@ -59,12 +47,5 @@ compose.desktop {
                 bundleID = "me.matsumo.koto.desktopApp"
             }
         }
-    }
-}
-
-buildkonfig {
-    packageName = "me.matsumo.koto"
-
-    defaultConfigs {
     }
 }

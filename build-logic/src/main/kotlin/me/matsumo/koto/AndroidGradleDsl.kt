@@ -54,6 +54,8 @@ fun Project.setupAndroid() {
             isCoreLibraryDesugaringEnabled = true
         }
 
+        buildFeatures.compose = true
+
         dependencies {
             add("coreLibraryDesugaring", libs.library("desugar"))
         }

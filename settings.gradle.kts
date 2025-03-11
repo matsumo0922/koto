@@ -3,13 +3,16 @@ rootProject.name = "koto"
 pluginManagement {
     includeBuild("build-logic")
     repositories {
-        google()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
         gradlePluginPortal()
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-        maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
-        maven("https://packages.jetbrains.team/maven/p/firework/dev")
-        maven("https://www.jitpack.io")
     }
 }
 
@@ -19,11 +22,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-        maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
-        maven("https://packages.jetbrains.team/maven/p/firework/dev")
-        maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
-        maven("https://www.jitpack.io")
+        maven("https://www.jetbrains.com/intellij-repository/releases")
+        maven("https://www.jetbrains.com/intellij-repository/snapshots")
+        maven("https://packages.jetbrains.team/maven/p/kpm/public/")
     }
 }
 

@@ -1,15 +1,8 @@
 plugins {
     id("matsumo.primitive.kmp.common")
-    id("matsumo.primitive.kmp.android.library")
     id("matsumo.primitive.kmp.compose")
-    id("matsumo.primitive.kmp.android")
-    id("matsumo.primitive.kmp.ios")
     id("matsumo.primitive.kmp.jvm")
     id("matsumo.primitive.detekt")
-}
-
-android {
-    namespace = "me.matsumo.koto.core.ui"
 }
 
 kotlin {
@@ -22,6 +15,8 @@ kotlin {
             implementation(project(":core:resources"))
 
             api(libs.bundles.ui.common)
+            api(libs.bundles.cupertino)
+            api(libs.bundles.jewel)
 
             // Compose
             api(compose.runtime)
@@ -35,8 +30,10 @@ kotlin {
             api(compose.materialIconsExtended)
         }
 
-        androidMain.dependencies {
-            api(libs.bundles.ui.android)
+        jvmMain.dependencies {
+            api(compose.desktop.currentOs) {
+                exclude(group = "org.jetbrains.compose.material")
+            }
         }
     }
 }

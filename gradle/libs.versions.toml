@@ -48,12 +48,14 @@ ksp = "2.1.10-1.0.29"
 koin = "4.0.2"
 
 # Others
+jewel = "0.27.0"
 ktor = "3.0.3"
 ksoup = "0.1.2"
 coil3 = "3.1.0"
 detekt = "1.23.7"
 ktorfit = "2.2.0"
 openai = "4.0.1"
+cupertino = "0.1.0-alpha04"
 libraries = "11.4.0"
 buildKonfig = "0.16.0"
 twitterComposeRule = "0.0.26"
@@ -161,6 +163,14 @@ coil3-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3
 coil3-network = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil3" }
 coil3-svg = { module = "io.coil-kt.coil3:coil-svg", version.ref = "coil3" }
 
+# Jewel
+jewel = { module = "org.jetbrains.jewel:jewel-int-ui-standalone-243", version.ref = "jewel" }
+jewel-window = { module = "org.jetbrains.jewel:jewel-int-ui-decorated-window-243", version.ref = "jewel" }
+
+# Cupertino
+cupertino = { module = "io.github.alexzhirkevich:cupertino", version.ref = "cupertino" }
+cupertino-icons = { module = "io.github.alexzhirkevich:cupertino-icons-extended", version.ref = "cupertino" }
+
 # Others
 ksoup = { module = "com.fleeksoft.ksoup:ksoup", version.ref = "ksoup" }
 desugar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.5" }
@@ -219,4 +229,14 @@ coil = [
     "coil3-compose",
     "coil3-network",
     "coil3-svg",
+]
+
+cupertino = [
+    "cupertino",
+    "cupertino-icons",
+]
+
+jewel = [
+    "jewel",
+    "jewel-window",
 ]
