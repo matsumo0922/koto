@@ -1,4 +1,4 @@
-package me.matsumo.koto.core.setting.components
+package me.matsumo.koto.core.setting.top.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,9 +9,9 @@ import me.matsumo.koto.core.resources.setting_general
 import me.matsumo.koto.core.resources.setting_general_language
 import me.matsumo.koto.core.resources.setting_general_retranslation
 import me.matsumo.koto.core.resources.setting_general_startup
-import me.matsumo.koto.core.setting.SettingSwitchItem
-import me.matsumo.koto.core.setting.SettingTextItem
-import me.matsumo.koto.core.setting.SettingTopTitleItem
+import me.matsumo.koto.core.setting.top.SettingSwitchItem
+import me.matsumo.koto.core.setting.top.SettingTextItem
+import me.matsumo.koto.core.setting.top.SettingTopTitleItem
 import org.jetbrains.compose.resources.stringResource
 
 @Composable

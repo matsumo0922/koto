@@ -25,7 +25,11 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 internal fun HomeLanguageSelector(
+    sourceLanguage: Language,
     targetLanguage: Language,
+    onSwapLanguage: () -> Unit,
+    onSelectSourceLanguage: () -> Unit,
+    onSelectTargetLanguage: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -38,11 +42,12 @@ internal fun HomeLanguageSelector(
     ) {
         LanguageSelector(
             modifier = Modifier.widthIn(min = 192.dp),
-            language = Language.AUTO,
+            language = sourceLanguage,
+            onClick = onSelectSourceLanguage,
         )
 
         IconButton(
-            onClick = { /* TODO */ },
+            onClick = onSwapLanguage,
         ) {
             Icon(
                 imageVector = Icons.Default.SwapHoriz,
@@ -54,6 +59,7 @@ internal fun HomeLanguageSelector(
         LanguageSelector(
             modifier = Modifier.widthIn(min = 192.dp),
             language = targetLanguage,
+            onClick = onSelectTargetLanguage,
         )
     }
 }
@@ -61,13 +67,14 @@ internal fun HomeLanguageSelector(
 @Composable
 private fun LanguageSelector(
     language: Language,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier
             .clip(CircleShape)
             .background(MaterialTheme.colorScheme.surfaceColorAtElevation(2.dp))
-            .clickable { }
+            .clickable(onClick = onClick)
             .padding(4.dp, 8.dp),
         contentAlignment = Alignment.Center,
     ) {

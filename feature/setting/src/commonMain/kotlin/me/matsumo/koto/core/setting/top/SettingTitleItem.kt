@@ -1,4 +1,4 @@
-package me.matsumo.koto.core.setting
+package me.matsumo.koto.core.setting.top
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme

@@ -1,4 +1,4 @@
-package me.matsumo.koto.core.setting.components
+package me.matsumo.koto.core.setting.top.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,8 +11,8 @@ import me.matsumo.koto.core.resources.setting_api_title
 import me.matsumo.koto.core.resources.translation_service_chatgpt
 import me.matsumo.koto.core.resources.translation_service_deepl
 import me.matsumo.koto.core.resources.translation_service_google
-import me.matsumo.koto.core.setting.SettingEditItem
-import me.matsumo.koto.core.setting.SettingTopTitleItem
+import me.matsumo.koto.core.setting.top.SettingEditItem
+import me.matsumo.koto.core.setting.top.SettingTopTitleItem
 
 @Composable
 internal fun SettingApiKeySection(

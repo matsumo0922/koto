@@ -18,6 +18,9 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun HomeScreen(
+    swapLanguage: () -> Unit,
+    selectSourceLanguage: () -> Unit,
+    selectTargetLanguage: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = koinViewModel(),
 ) {
@@ -30,7 +33,11 @@ fun HomeScreen(
     ) {
         HomeLanguageSelector(
             modifier = Modifier.wrapContentWidth(),
+            sourceLanguage = uiState.userData.sourceLanguage,
             targetLanguage = uiState.userData.targetLanguage,
+            onSwapLanguage = swapLanguage,
+            onSelectSourceLanguage = selectSourceLanguage,
+            onSelectTargetLanguage = selectTargetLanguage,
         )
 
         HomeEditor(

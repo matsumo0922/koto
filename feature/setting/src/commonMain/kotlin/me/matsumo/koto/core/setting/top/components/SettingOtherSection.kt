@@ -1,4 +1,4 @@
-package me.matsumo.koto.core.setting.components
+package me.matsumo.koto.core.setting.top.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,8 +9,8 @@ import me.matsumo.koto.core.resources.setting_other_open_source_license
 import me.matsumo.koto.core.resources.setting_other_privacy_policy
 import me.matsumo.koto.core.resources.setting_other_terms_of_service
 import me.matsumo.koto.core.resources.setting_other_title
-import me.matsumo.koto.core.setting.SettingTextItem
-import me.matsumo.koto.core.setting.SettingTopTitleItem
+import me.matsumo.koto.core.setting.top.SettingTextItem
+import me.matsumo.koto.core.setting.top.SettingTopTitleItem
 
 @Composable
 internal fun SettingOtherSection(

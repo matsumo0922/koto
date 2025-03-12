@@ -1,4 +1,4 @@
-package me.matsumo.koto.core.setting
+package me.matsumo.koto.core.setting.top
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,9 +16,9 @@ import androidx.compose.ui.window.rememberWindowState
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import me.matsumo.koto.core.resources.Res
 import me.matsumo.koto.core.resources.setting_title
-import me.matsumo.koto.core.setting.components.SettingApiKeySection
-import me.matsumo.koto.core.setting.components.SettingGeneralSection
-import me.matsumo.koto.core.setting.components.SettingOtherSection
+import me.matsumo.koto.core.setting.top.components.SettingApiKeySection
+import me.matsumo.koto.core.setting.top.components.SettingGeneralSection
+import me.matsumo.koto.core.setting.top.components.SettingOtherSection
 import me.matsumo.koto.core.ui.AsyncLoadContents
 import me.matsumo.koto.core.ui.theme.bold
 import org.jetbrains.compose.resources.stringResource

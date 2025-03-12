@@ -35,6 +35,12 @@ class UserDataStore(
         }
     }
 
+    suspend fun setSourceLanguage(language: Language) = withContext(ioDispatcher) {
+        userPreference.updateData {
+            it.copy(sourceLanguage = language)
+        }
+    }
+
     suspend fun setTargetLanguage(language: Language) = withContext(ioDispatcher) {
         userPreference.updateData {
             it.copy(targetLanguage = language)

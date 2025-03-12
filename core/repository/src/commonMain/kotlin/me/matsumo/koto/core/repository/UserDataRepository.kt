@@ -1,5 +1,6 @@
 package me.matsumo.koto.core.repository
 
+import kotlinx.coroutines.flow.first
 import me.matsumo.koto.core.datasource.UserDataStore
 import me.matsumo.koto.core.domain.Language
 import me.matsumo.koto.core.domain.ThemeColorConfig
@@ -23,8 +24,26 @@ class UserDataRepository(
         userDataStore.setThemeColorConfig(themeColorConfig)
     }
 
+    suspend fun setSourceLanguage(language: Language) {
+        if (language == userData.first().targetLanguage) {
+            Language.entries.firstOrNull { it != language && (it == Language.JAPANESE || it == Language.ENGLISH) }?.also {
+                userDataStore.setTargetLanguage(it)
+            }
+        }
+
+        userDataStore.setSourceLanguage(language)
+    }
+
     suspend fun setTargetLanguage(language: Language) {
-        userDataStore.setTargetLanguage(language)
+        if (language == userData.first().sourceLanguage) {
+            Language.entries.firstOrNull { it != language && (it == Language.JAPANESE || it == Language.ENGLISH) }?.also {
+                userDataStore.setSourceLanguage(it)
+            }
+        }
+
+        if (language != Language.AUTO) {
+            userDataStore.setTargetLanguage(language)
+        }
     }
 
     suspend fun setSelectedTranslationService(translationService: TranslationService) {
