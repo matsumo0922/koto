@@ -14,6 +14,7 @@ plugins {
     alias(libs.plugins.kotlin.compose.compiler) apply false
 
     // Others
+    alias(libs.plugins.room) apply false
     alias(libs.plugins.ktor) apply false
     alias(libs.plugins.detekt) apply false
     alias(libs.plugins.ktorfit) apply false

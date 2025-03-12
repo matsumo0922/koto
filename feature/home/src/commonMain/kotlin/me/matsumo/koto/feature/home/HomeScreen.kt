@@ -44,6 +44,8 @@ fun HomeScreen(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth(),
+            uiState = uiState,
+            onTranslationRequested = viewModel::translation,
         )
 
         HomeServiceSelector(

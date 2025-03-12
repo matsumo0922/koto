@@ -1,6 +1,7 @@
 plugins {
     id("matsumo.primitive.kmp.common")
     id("matsumo.primitive.kmp.jvm")
+    id("matsumo.primitive.room")
     id("matsumo.primitive.ktorfit")
     id("matsumo.primitive.detekt")
 }

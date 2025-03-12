@@ -1,4 +1,4 @@
-package me.matsumo.koto.core.repository
+package me.matsumo.koto.core.repository.translator
 
 import me.matsumo.koto.core.domain.Language
 
@@ -7,5 +7,5 @@ interface Translator {
         source: Language,
         target: Language,
         text: String,
-    )
+    ): String
 }

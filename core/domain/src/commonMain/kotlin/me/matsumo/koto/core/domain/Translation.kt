@@ -10,5 +10,6 @@ data class Translation(
     val sourceText: String,
     val translatedText: String,
     val reTranslatedText: String,
+    val service: TranslationService,
     val createdAt: Instant,
 )
